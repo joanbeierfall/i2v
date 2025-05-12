@@ -13,7 +13,7 @@ def run_face_dance():
         video_label = data.get("video_label")
 
         result = client.predict(
-            image_url=handle_file(image_url),
+            image_url=image_url,
             selected_video_label=video_label,
             api_name="/face_dance_ui"
         )
@@ -50,7 +50,7 @@ def run_image_to_video():
         prompt = data.get("prompt")  # Style name used as prompt
 
         result = client.predict(
-            image_url=handle_file(image_url),
+            image_url=image_url,
             prompt=prompt,
             style_id=style_id,
             api_name="/image_to_video_ui"
