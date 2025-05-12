@@ -47,7 +47,7 @@ def run_image_to_video():
         data = request.json
         image_url = data.get("image_url")
         style_id = data.get("style_id")
-        prompt = style_id.capitalize()  # Style name used as prompt
+        prompt = data.get("prompt")  # Style name used as prompt
 
         result = client.predict(
             image_url=handle_file(image_url),
