@@ -4,6 +4,7 @@ from gradio_client import Client, handle_file
 app = Flask(__name__)
 client = Client("http://80.188.223.202:10005/")
 
+
 # Face Dance endpoint
 @app.route("/face_dance", methods=["POST"])
 def run_face_dance():
