@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from gradio_client import Client, handle_file
 
 app = Flask(__name__)
-client = Client("http://80.188.223.202:11115/")
+client = Client("http://80.188.223.202:10005/")
 
 # Face Dance endpoint
 @app.route("/face_dance", methods=["POST"])
@@ -15,7 +15,7 @@ def run_face_dance():
         result = client.predict(
             image_url=image_url,
             selected_video_label=video_label,
-            api_name="/face_dance_ui"
+            api_name="/face_dance_function_gradio"
         )
         return jsonify(result)
     except Exception as e:
@@ -34,7 +34,7 @@ def run_check_task():
             task_id=task_id,
             token=token,
             member_id=member_id,
-            api_name="/check_task_status_ui"
+            api_name="/check_task_status_function_gradio"
         )
         return jsonify(result)
     except Exception as e:
@@ -53,7 +53,7 @@ def run_image_to_video():
             image_url=image_url,
             prompt=prompt,
             style_id=style_id,
-            api_name="/image_to_video_ui"
+            api_name="/image_to_video_function_gradio"
         )
         return jsonify(result)
     except Exception as e:
