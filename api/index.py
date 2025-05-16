@@ -11,7 +11,7 @@ def run_face_dance():
     try:
         data = request.json
         image_url = data.get("image_url")
-        video_label = data.get("video_label")
+        video_label = data.get("selected_video_label")
 
         result = client.predict(
             image_url=image_url,
